@@ -12,3 +12,6 @@ curl "http://localhost:4741/sign-in" \
   }'
 
 echo
+
+# COMMAND LINE
+# EMAIL=jack PASSWORD=jack sh scripts/auth/sign-in.sh
