@@ -1,4 +1,6 @@
+# frozen_string_literal: true
+
 class Song < ApplicationRecord
   belongs_to :user
-  validates :title, :user, presence: true
+  # validates :title, :artist, presence: true
 end

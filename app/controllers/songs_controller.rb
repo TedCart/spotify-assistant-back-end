@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SongsController < ProtectedController
   before_action :set_song, only: [:show, :update, :destroy]
 
