@@ -21,6 +21,9 @@ Bundler.require(*Rails.groups)
 module SpotifyAssistantBackEnd
   # :nodoc:
   class Application < Rails::Application
+
+    # RSpotify::authenticate(ENV['CLIENT_ID'], ENV['CLIENT_SECRET'])
+
     # Settings in config/environments/* take precedence over those specified
     # here.
     # Application configuration should go into files in config/initializers
