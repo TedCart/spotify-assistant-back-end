@@ -2,7 +2,26 @@
 
 class UsersController < ProtectedController
   before_action :set_user, only: %i[update show]
+  before_action :spotify_creds, only: %i[spotify]
   skip_before_action :authenticate, only: %i[signup signin]
+
+  # GET /spotify
+  def spotify
+    plain = ENV['CLIENT_ID'] + ':' + ENV['CLIENT_SECRET']
+    enc = Base64.strict_encode64(plain)
+    short_message = 'my words'
+    xxx = {
+      Basic: enc
+    }
+    render json: xxx
+    # @spotify
+    # user = User.create(user_creds)
+    # if user.valid?
+    #   render json: user, status: :created
+    # else
+    #   render json: user.errors, status: :bad_request
+    # end
+  end
 
   # POST '/sign-up'
   def signup
@@ -64,6 +83,10 @@ class UsersController < ProtectedController
   end
 
   private
+
+  def spotify_creds
+    @spotify = params.permit(:code, :uri)
+  end
 
   def set_user
     @user = User.find(params[:id])
