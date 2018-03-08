@@ -11,7 +11,8 @@ class UsersController < ProtectedController
     enc = Base64.strict_encode64(plain)
     short_message = 'my words'
     xxx = {
-      Basic: enc
+      # Basic: enc
+      Basic: 'butts'
     }
     render json: xxx
     # @spotify
