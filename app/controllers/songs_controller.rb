@@ -5,7 +5,8 @@ class SongsController < ProtectedController
 
   # GET /songs
   def index
-    @songs = Song.all
+    # @songs = Song.all
+    @songs = current_user.songs.all
 
     render json: @songs
   end
@@ -44,7 +45,7 @@ class SongsController < ProtectedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_song
-      @song = Song.find(params[:id])
+      @song = current_user.songs.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
