@@ -11,6 +11,20 @@ Deployed Back-end: https://spotify-assistant-itunes.herokuapp.com/
 - Ruby on Rails
 - PostgreSQL
 
+## ERD
+
+A User has many songs.
+```
+USER
+- email
+- password
+
+SONG
+- artist
+- title
+- user_id
+```
+
 ## What does it do?
 
 Currently, this app lets a user create and save a list of songs. The user can also edit a song's title or artist after creating it. The user can also delete songs from the list.
@@ -19,7 +33,7 @@ The list is saved on an API and protected so that other users cannot view each o
 
 ## Plans for the future
 
-The wireframes below show a concept that this projects has not yet acheived. Hopefully I will be able to incorporate Spotify user authentication and parse song information from a user's iTunes library so that the user can add those songs to their Spotify library and stream them through that service.
+ Hopefully I will be able to incorporate Spotify user authentication and parse song information from a user's iTunes library so that the user can add those songs to their Spotify library and stream them through that service.
 
 ## Planning Stages
 
@@ -38,17 +52,3 @@ I focused heavily on getting authentication from spotify, however the task prove
 I felt that certain important decisions hinged on how that authentication process worked, such as which back-end API framework I should use (express or Rails?). As such, I replaced my back end more than once trying to get a successfull response from Spotify's servers. To make matters worse (or better, depending on your point of view) I made a successful curl request to the Spotify API and received an access token. This reinvigorated my focus on the issue, figuring I must be close to streamlining that request.
 
 After a few days, I relented and created a more basic project in keeping with the minimum requirements for the project. I created resources on the back-end to host a list of songs.
-
-## ERD
-
-A User has many songs.
-```
-USER
-- email
-- password
-
-SONG
-- artist
-- title
-- user_id
-```
